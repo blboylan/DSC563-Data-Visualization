@@ -130,3 +130,50 @@ GitHub commit history preserves the actual changes and commit messages.
 This repository documents coursework completed using course-provided simulated data and Python analysis.
 
 AI-assisted code, borrowed code, and relevant prompts or URLs should also be disclosed in the applicable notebook cells according to the course coding policy.
+
+## Module 2 — Tableau Comparison and Verification
+
+### Python vs. Tableau Verification
+
+The Module 1 attendance chart was recreated in Tableau using the same simulated dataset, October 2026 date filter, neighborhood categories, and summed attendance visits.
+
+| Neighborhood | Python | Tableau | Difference |
+|---|---:|---:|---:|
+| East | 94 | 94 | 0 |
+| North | 90 | 90 | 0 |
+| South | 82 | 82 | 0 |
+| West | 90 | 90 | 0 |
+
+All four neighborhood attendance totals matched exactly.
+
+### Graduate Extension — Utilization Comparison
+
+Two utilization methods were compared across May–October 2026:
+
+- **Mean monthly utilization:** Average of monthly attendance divided by monthly capacity, using observed months.
+- **Capacity-weighted utilization:** Total observed attendance divided by total capacity for the same observed months.
+
+| Neighborhood | Mean Monthly | Capacity-Weighted | Difference (pp) | Observed Months |
+|---|---:|---:|---:|---:|
+| East | 73.41% | 73.57% | +0.16 | 5 of 6 |
+| North | 73.09% | 73.17% | +0.08 | 6 of 6 |
+| South | 79.92% | 80.00% | +0.08 | 6 of 6 |
+| West | 59.22% | 59.36% | +0.14 | 6 of 6 |
+
+Capacity weighting slightly increased utilization for all four neighborhoods but did not change their ranking: South, East, North, West.
+
+**Assumption and limitation:** East's June 2026 attendance is missing and was excluded rather than treated as zero. Results are based on simulated data, and attendance represents seat visits rather than unique participants.
+
+### Module 2 Evidence Files
+
+- `m02_python_tableau_comparison.csv` — Python versus Tableau attendance verification.
+- `m02_python_tableau_verification.png` — Tableau numerical verification screenshot.
+- `m02_graduate_utilization_comparison.csv` — Utilization methods and observed-month coverage.
+- `m02_graduate_utilization_final.png` — Tableau graduate extension screenshot.
+- `DSC563_Module2_Tableau_Comparison.twbx` — Tableau packaged workbook.
+
+### Reproducibility
+
+Open the existing Google Colab notebook and run all cells using the fixed May–October 2026 reporting period. The Module 2 code cell independently calculates October attendance and both utilization methods, checks the results against Tableau, and exports the comparison CSV files.
+
+The Tableau workbook uses `tableau_workshops_tidy.csv`, with October 2026 selected for the attendance verification worksheet and the full May–October 2026 reporting period used for the graduate utilization comparison.
